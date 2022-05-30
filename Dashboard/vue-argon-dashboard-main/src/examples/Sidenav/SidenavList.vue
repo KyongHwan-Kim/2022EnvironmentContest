@@ -114,39 +114,28 @@
       </li>
     </ul>
   </div>
-  <div class="pt-3 mx-3 mt-3 sidenav-footer">
-    <sidenav-card
-      :class="cardBg"
-      textPrimary="Need Help?"
-      textSecondary="Please check our docs"
-    />
-  </div>
 </template>
 <script>
 import SidenavItem from "./SidenavItem.vue";
-import SidenavCard from "./SidenavCard.vue";
 
 export default {
   name: "SidenavList",
-  props: {
-    cardBg: String
-  },
+  props: {},
   data() {
     return {
       title: "Argon Dashboard 2",
       controls: "dashboardsExamples",
-      isActive: "active"
+      isActive: "active",
     };
   },
   components: {
     SidenavItem,
-    SidenavCard
   },
   methods: {
     getRoute() {
       const routeArr = this.$route.path.split("/");
       return routeArr[1];
-    }
-  }
+    },
+  },
 };
 </script>

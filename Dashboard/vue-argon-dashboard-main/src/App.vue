@@ -21,7 +21,7 @@ Coded by www.creative-tim.com
     :custom_class="this.$store.state.mcolor"
     :class="[
       this.$store.state.isTransparent,
-      this.$store.state.isRTL ? 'fixed-end' : 'fixed-start'
+      this.$store.state.isRTL ? 'fixed-end' : 'fixed-start',
     ]"
     v-if="this.$store.state.showSidenav"
   />
@@ -38,12 +38,11 @@ Coded by www.creative-tim.com
       v-if="this.$store.state.showNavbar"
     />
     <router-view />
-    <app-footer v-show="this.$store.state.showFooter" />
     <configurator
       :toggle="toggleConfigurator"
       :class="[
         this.$store.state.showConfig ? 'show' : '',
-        this.$store.state.hideConfigButton ? 'd-none' : ''
+        this.$store.state.hideConfigButton ? 'd-none' : '',
       ]"
     />
   </main>
@@ -52,7 +51,6 @@ Coded by www.creative-tim.com
 import Sidenav from "./examples/Sidenav";
 import Configurator from "@/examples/Configurator.vue";
 import Navbar from "@/examples/Navbars/Navbar.vue";
-import AppFooter from "@/examples/Footer.vue";
 import { mapMutations } from "vuex";
 
 export default {
@@ -61,10 +59,9 @@ export default {
     Sidenav,
     Configurator,
     Navbar,
-    AppFooter
   },
   methods: {
-    ...mapMutations(["toggleConfigurator", "navbarMinimize"])
+    ...mapMutations(["toggleConfigurator", "navbarMinimize"]),
   },
   computed: {
     navClasses() {
@@ -75,12 +72,12 @@ export default {
           this.$store.state.isNavFixed && this.$store.state.darkMode,
         "position-absolute px-4 mx-0 w-100 z-index-2": this.$store.state
           .isAbsolute,
-        "px-0 mx-4": !this.$store.state.isAbsolute
+        "px-0 mx-4": !this.$store.state.isAbsolute,
       };
-    }
+    },
   },
   beforeMount() {
     this.$store.state.isTransparent = "bg-transparent";
-  }
+  },
 };
 </script>
