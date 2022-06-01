@@ -38,18 +38,10 @@ Coded by www.creative-tim.com
       v-if="this.$store.state.showNavbar"
     />
     <router-view />
-    <configurator
-      :toggle="toggleConfigurator"
-      :class="[
-        this.$store.state.showConfig ? 'show' : '',
-        this.$store.state.hideConfigButton ? 'd-none' : '',
-      ]"
-    />
   </main>
 </template>
 <script>
 import Sidenav from "./examples/Sidenav";
-import Configurator from "@/examples/Configurator.vue";
 import Navbar from "@/examples/Navbars/Navbar.vue";
 import { mapMutations } from "vuex";
 
@@ -57,7 +49,6 @@ export default {
   name: "App",
   components: {
     Sidenav,
-    Configurator,
     Navbar,
   },
   methods: {

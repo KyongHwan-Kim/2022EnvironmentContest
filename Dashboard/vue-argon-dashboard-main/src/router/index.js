@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Dashboard from "../views/Dashboard.vue";
+import DashboardLocation from "../views/DashboardLocation.vue";
 import Tables from "../views/Tables.vue";
 import Billing from "../views/Billing.vue";
 import VirtualReality from "../views/VirtualReality.vue";
@@ -18,6 +19,11 @@ const routes = [
     path: "/dashboard-default",
     name: "Dashboard",
     component: Dashboard,
+  },
+  {
+    path: "/dashboard-location",
+    name: "DashboardLocation",
+    component: DashboardLocation,
   },
   {
     path: "/tables",
@@ -54,7 +60,6 @@ const routes = [
     name: "Signup",
     component: Signup,
   },
-  
 ];
 
 const router = createRouter({

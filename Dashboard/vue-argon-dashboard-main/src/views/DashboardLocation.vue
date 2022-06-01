@@ -49,33 +49,13 @@
             ></card>
           </div>
         </div>
-        <div class="row mb-4">
-          <div class="col-lg-5 col-md-6 col-12">
-            <div class="card z-index-1">
-              <div class="p-3 pb-0 card-header">
-                <div class="d-flex justify-content-between">
-                  <h6 class="mb-2">지역별 예상 배출량</h6>
-                </div>
-              </div>
-              <div class="p-3 card-body">
-                <Map2></Map2>
-              </div>
-            </div>
-          </div>
+        <div class="row">
           <div class="col-lg-7 mb-lg">
             <!-- line chart -->
-            <div class="card z-index-1">
+            <div class="card z-index-2">
               <gradient-line-chart />
             </div>
           </div>
-          <div class="col-lg-3 mb-lg">
-            <!-- line chart -->
-            <div class="card z-index-1">
-              <gradient-circle-chart />
-            </div>
-          </div>
-        </div>
-        <div class="card">
           <div class="col-lg-5">
             <carousel />
           </div>
@@ -98,9 +78,7 @@
                             <img :src="sale.flag" alt="Country flag" />
                           </div>
                           <div class="ms-4">
-                            <p class="mb-0 text-xs font-weight-bold">
-                              Country:
-                            </p>
+                            <p class="mb-0 text-xs font-weight-bold">Country:</p>
                             <h6 class="mb-0 text-sm">{{ sale.country }}</h6>
                           </div>
                         </div>
@@ -132,15 +110,6 @@
           <div class="col-lg-5">
             <categories-card />
           </div>
-          <div class="col-lg-3">
-            <Chart1 />
-          </div>
-          <div class="col-lg-2">
-            <Chart2 />
-          </div>
-          <div class="col-lg-2">
-            <Progress :percentage="100" />
-          </div>
         </div>
       </div>
     </div>
@@ -149,13 +118,8 @@
 <script>
 import Card from "@/examples/Cards/Card.vue";
 import GradientLineChart from "@/examples/Charts/GradientLineChart.vue";
-import GradientCircleChart from "@/examples/Charts/GradientCircleChart.vue";
 import Carousel from "./components/Carousel.vue";
-import Map2 from "./components/d3map.vue";
-import Progress from "@/components/ArgonProgress.vue";
 import CategoriesCard from "./components/CategoriesCard.vue";
-import Chart1 from "@/examples/Charts/ActiveUsersChart.vue";
-import Chart2 from "@/examples/Charts/ConsumptionDayChart.vue";
 
 import US from "@/assets/img/icons/flags/US.png";
 import DE from "@/assets/img/icons/flags/DE.png";
@@ -168,7 +132,7 @@ export default {
     return {
       stats: {
         money: {
-          title: "금일 예상 플라스틱 배출량",
+          title: "Today's Money",
           value: "$53,000",
           percentage: "+55%",
           iconClass: "ni ni-money-coins",
@@ -176,7 +140,7 @@ export default {
           iconBackground: "bg-gradient-primary",
         },
         users: {
-          title: "금일 예상 종이 배출량",
+          title: "Today's Users",
           value: "2,300",
           percentage: "+3%",
           iconClass: "ni ni-world",
@@ -184,7 +148,7 @@ export default {
           detail: "since last week",
         },
         clients: {
-          title: "금일 예상 유리 배출량",
+          title: "New Clients",
           value: "+3,462",
           percentage: "-2%",
           iconClass: "ni ni-paper-diploma",
@@ -193,7 +157,7 @@ export default {
           detail: "since last quarter",
         },
         sales: {
-          title: "금일 예상 캔 배출량",
+          title: "Sales",
           value: "$103,430",
           percentage: "+5%",
           iconClass: "ni ni-cart",
@@ -236,13 +200,8 @@ export default {
   components: {
     Card,
     GradientLineChart,
-    GradientCircleChart,
     Carousel,
     CategoriesCard,
-    Chart1,
-    Chart2,
-    Progress,
-    Map2,
   },
 };
 </script>

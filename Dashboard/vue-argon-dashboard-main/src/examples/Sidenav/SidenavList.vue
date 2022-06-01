@@ -17,6 +17,17 @@
       </li>
       <li class="nav-item">
         <sidenav-item
+          url="/dashboard-location"
+          :class="getRoute() === 'dashboard-location' ? 'active' : ''"
+          :navText="this.$store.state.isRTL ? 'لوحة القيادة' : 'Dashboard'"
+        >
+          <template v-slot:icon>
+            <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
+          </template>
+        </sidenav-item>
+      </li>
+      <li class="nav-item">
+        <sidenav-item
           url="/tables"
           :class="getRoute() === 'tables' ? 'active' : ''"
           :navText="this.$store.state.isRTL ? 'الجداول' : 'Tables'"
@@ -49,17 +60,6 @@
         >
           <template v-slot:icon>
             <i class="ni ni-app text-info text-sm opacity-10"></i>
-          </template>
-        </sidenav-item>
-      </li>
-      <li class="nav-item">
-        <sidenav-item
-          url="/rtl-page"
-          :class="getRoute() === 'rtl-page' ? 'active' : ''"
-          navText="RTL"
-        >
-          <template v-slot:icon>
-            <i class="ni ni-world-2 text-danger text-sm opacity-10"></i>
           </template>
         </sidenav-item>
       </li>
@@ -123,7 +123,7 @@ export default {
   props: {},
   data() {
     return {
-      title: "Argon Dashboard 2",
+      title: "WECO Dashboard",
       controls: "dashboardsExamples",
       isActive: "active",
     };
